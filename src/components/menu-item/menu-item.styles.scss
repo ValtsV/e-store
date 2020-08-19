@@ -1,0 +1,68 @@
+@import "../../scss/_config.styles";
+
+.menu-item {
+  width: 100%;
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 15px;
+  // margin: 2.5rem 1rem;
+  margin: 2.5vw 1.2vw;
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 3.5vw;
+    padding-left: 1rem;
+  }
+}
+
+.big {
+  height: 25vw;
+  width: 50%;
+  max-height: 350px;
+
+  .title {
+    font-size: 2.8vw;
+    word-spacing: 1000px;
+  }
+
+  .btn {
+    width: 40%;
+    height: 25%;
+    background-color: $secondary-color;
+    border: none;
+    border-radius: 5px;
+    font-size: 2vw;
+    color: #fff;
+  }
+}
+.small {
+  height: 365px;
+  width: 400px;
+}
+
+@media (min-width: 1350px) {
+  .menu-item {
+    margin: 2.5rem 1rem;
+
+    .content {
+      margin: 3rem;
+    }
+  }
+
+  .big {
+    .title {
+      font-size: 2.5rem;
+    }
+
+    .btn {
+      font-size: 1.8rem;
+    }
+  }
+}
+
+// @media (max-width: 960px) {
+
+// }

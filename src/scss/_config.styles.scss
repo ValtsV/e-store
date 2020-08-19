@@ -1,0 +1,28 @@
+//  colors
+
+$primary-color: #ffcacd;
+$secondary-color: #403f4c;
+
+// Margin n Padding
+
+$increments: (1, 2, 3, 4, 5);
+
+@each $inc in $increments {
+  .m-#{$inc} {
+    margin: #{$inc}rem;
+  }
+
+  // vertical
+  .mv-#{$inc} {
+    margin: #{$inc}rem 0rem;
+  }
+
+  .p-#{$inc} {
+    margin: #{$inc}rem;
+  }
+
+  // vertical
+  .pv-#{$inc} {
+    margin: #{$inc}rem 0rem;
+  }
+}
