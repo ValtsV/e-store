@@ -29,19 +29,19 @@ class Directory extends Component {
       smallSections: [
         {
           id: "s1",
-          title: "hats",
+          title: "Stetson Fedora",
           price: 299.99,
           image: Img3,
         },
         {
           id: "s2",
-          title: "sneakers",
+          title: "Nike Air Max Smth",
           price: 249.99,
           image: Img4,
         },
         {
           id: "s3",
-          title: "glasses",
+          title: "Ray Ban Collection",
           price: 99.99,
           image: Img5,
         },

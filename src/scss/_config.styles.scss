@@ -18,11 +18,11 @@ $increments: (1, 2, 3, 4, 5);
   }
 
   .p-#{$inc} {
-    margin: #{$inc}rem;
+    padding: #{$inc}rem;
   }
 
   // vertical
   .pv-#{$inc} {
-    margin: #{$inc}rem 0rem;
+    padding: #{$inc}rem 0rem;
   }
 }
