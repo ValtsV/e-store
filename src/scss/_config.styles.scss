@@ -3,6 +3,14 @@
 $primary-color: #ffcacd;
 $secondary-color: #403f4c;
 
+.bg-pink {
+  background-color: $primary-color;
+}
+
+.bg-dark {
+  background-color: $secondary-color;
+}
+
 // Margin n Padding
 
 $increments: (1, 2, 3, 4, 5);

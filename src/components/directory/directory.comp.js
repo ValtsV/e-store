@@ -32,18 +32,21 @@ class Directory extends Component {
           title: "Stetson Fedora",
           price: 299.99,
           image: Img3,
+          linkUrl: "hats",
         },
         {
           id: "s2",
           title: "Nike Air Max Smth",
           price: 249.99,
           image: Img4,
+          linkUrl: "",
         },
         {
           id: "s3",
           title: "Ray Ban Collection",
           price: 99.99,
           image: Img5,
+          linkUrl: "",
         },
       ],
     };
@@ -51,15 +54,15 @@ class Directory extends Component {
 
   render() {
     return (
-      <div className="m-1 bg">
+      <div className="p-1 bg">
         <div className="directory-menu">
-          {this.state.bigSections.map(({ id, title, image }) => (
-            <MenuItem key={id} title={title} img={image} />
+          {this.state.bigSections.map(({ id, ...sectionProps }) => (
+            <MenuItem key={id} {...sectionProps} />
           ))}
         </div>
         <div className="directory-menu">
-          {this.state.smallSections.map(({ id, title, price, image }) => (
-            <MenuItem key={id} title={title} price={price} img={image} />
+          {this.state.smallSections.map(({ id, ...sectionProps }) => (
+            <MenuItem key={id} {...sectionProps} />
           ))}
         </div>
       </div>

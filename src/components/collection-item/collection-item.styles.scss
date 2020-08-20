@@ -1,0 +1,42 @@
+.coll-item {
+  height: 340px;
+  width: 300px;
+  background-color: #fff;
+  border-radius: 15px;
+}
+
+.coll-item-content {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.coll-lower {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.divDummy {
+  height: 53%;
+}
+
+.coll-lower {
+  height: 47%;
+  margin: 0 2rem 2rem 2rem;
+}
+
+.item-name,
+.item-price {
+  font-size: 1.5rem;
+  font-weight: lighter;
+}
+
+.btn-item {
+  width: 100%;
+  height: 2.5rem;
+  border: none;
+  border-radius: 5px;
+  font-size: 2vw;
+  color: #fff;
+}
