@@ -10,16 +10,21 @@ const MenuItem = ({ title, price, image, history, linkUrl, match }) => {
     : (imgBig = <img className="big" src={image} alt="title" />);
 
   return (
-    <div
-      className={`menu-item ${price ? "small" : "big"}`}
-      onClick={() => history.push(`${match.url}${linkUrl}`)}
-    >
+    <div className={`menu-item ${price ? "small" : "big"}`}>
       <div className="imgCont">{imgSmall}</div>
 
       <div className="content">
-        <span className="title">{title}</span>
+        <span
+          className="title"
+          onClick={() => history.push(`${match.url}${linkUrl}`)}
+        >
+          {title}
+        </span>
         {price ? <span className="price">{price}€</span> : null}
-        <button className={`btn ${price ? "btn-sm" : "btn-bg"}`}>
+        <button
+          onClick={() => history.push(`${match.url}${linkUrl}`)}
+          className={`btn ${price ? "btn-sm" : "btn-bg"}`}
+        >
           shop now
         </button>
       </div>

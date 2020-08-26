@@ -3,11 +3,13 @@ const INITIAL_STATE = {
     {
       id: "b1",
       title: "womens collection",
+      linkUrl: "shop/womens",
       image: "",
     },
     {
       id: "b2",
       title: "mens collection",
+      linkUrl: "shop/mens",
       image: "",
     },
   ],
