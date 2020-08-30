@@ -2,9 +2,19 @@ import React from "react";
 
 import CollectionItem from "../components/collection-item/collection-item.comp";
 import { connect } from "react-redux";
-import { selectCollection } from "../redux/shop/shop.selectors";
+import {
+  selectCollectionMens,
+  selectCollectionWomens,
+} from "../redux/shop/shop.selectors";
 
-const CollectionPage = ({ collection }) => {
+const CollectionPage = ({ collectionWomens, collectionMens, match }) => {
+  console.log("match--");
+  console.log(match.path);
+
+  const array = match.path.split("/");
+
+  const collection = array[1] === "womens" ? collectionWomens : collectionMens;
+
   const { title, items } = collection;
   return (
     <div className="category-page">
@@ -19,7 +29,15 @@ const CollectionPage = ({ collection }) => {
 };
 
 const mapStateToProps = (state, ownProps) => ({
-  collection: selectCollection(ownProps.match.params.collectionId)(state),
+  // collection: selectCollection(ownProps.match.params.collectionId)(state),
+  collectionWomens: selectCollectionWomens(ownProps.match.params.collectionId)(
+    state
+  ),
+  collectionMens: selectCollectionMens(ownProps.match.params.collectionId)(
+    state
+  ),
+
+  // collection: selectCollectionsForPreview,
 });
 
 export default connect(mapStateToProps)(CollectionPage);

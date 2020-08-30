@@ -7,6 +7,28 @@ export const selectCollections = createSelector(
   (shop) => shop.collections
 );
 
+export const selectCollectionsWomens = createSelector(
+  [selectShop],
+  (shop) => shop.collections.womens
+);
+
+export const selectCollectionsMens = createSelector(
+  [selectShop],
+  (shop) => shop.collections.mens
+);
+
+export const selectCollectionWomens = (collectionUrlParam) =>
+  createSelector(
+    [selectCollectionsWomens],
+    (collections) => collections[collectionUrlParam]
+  );
+
+export const selectCollectionMens = (collectionUrlParam) =>
+  createSelector(
+    [selectCollectionsMens],
+    (collections) => collections[collectionUrlParam]
+  );
+
 export const selectCollection = (collectionUrlParam) =>
   createSelector(
     [selectCollections],
@@ -17,3 +39,9 @@ export const selectCollectionsForPreview = createSelector(
   [selectCollections],
   (collections) => Object.keys(collections).map((key) => collections[key])
 );
+
+export const selectCollectionWom = (collectionUrlParam) =>
+  createSelector(
+    [selectCollections],
+    (collections) => collections[0][collectionUrlParam]
+  );
