@@ -8,15 +8,14 @@ import {
 } from "../redux/shop/shop.selectors";
 
 const CollectionPage = ({ collectionWomens, collectionMens, match }) => {
-  console.log("match--");
-  console.log(match.path);
+  const urlArray = match.path.split("/");
 
-  const array = match.path.split("/");
-
-  const collection = array[1] === "womens" ? collectionWomens : collectionMens;
+  const collection =
+    urlArray[1] === "womens" ? collectionWomens : collectionMens;
 
   const { title, items } = collection;
-  return (
+
+  return items ? (
     <div className="category-page">
       <h1>{title}</h1>
       <div className="items">
@@ -25,11 +24,14 @@ const CollectionPage = ({ collectionWomens, collectionMens, match }) => {
         ))}
       </div>
     </div>
+  ) : (
+    <div className="category-page">
+      <h1>{title}</h1>
+    </div>
   );
 };
 
 const mapStateToProps = (state, ownProps) => ({
-  // collection: selectCollection(ownProps.match.params.collectionId)(state),
   collectionWomens: selectCollectionWomens(ownProps.match.params.collectionId)(
     state
   ),
