@@ -14,9 +14,8 @@ const CollectionItem = ({ item, addItem }) => {
         {/* <img src="#" /> */}
         <div className="divDummy"></div>
         <div className="coll-lower">
-          <span className="item-name">{name}</span>
-          <span className="item-price">{price}€</span>
-          {/* <button className="btn-item bg-dark">add to cart</button> */}
+          <span className="coll-item-name">{name}</span>
+          <span className="coll-item-price">{price}€</span>
           <CustomButton
             className="btn-item bg-dark"
             onClick={() => addItem(item)}

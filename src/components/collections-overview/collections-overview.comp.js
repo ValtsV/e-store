@@ -30,8 +30,6 @@ const CollectionsOverview = ({ collections, match }) => {
 
 const mapStateToProps = createStructuredSelector({
   collections: selectCollectionsForPreview,
-  // collectionsMen: selectCollectionsForMen,
-  // collectionsWomen: selectCollectionsForWomen,
 });
 
 export default connect(mapStateToProps)(CollectionsOverview);

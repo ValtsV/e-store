@@ -1,20 +1,20 @@
 @import "../../scss/_config.styles";
 
 .menu-item {
-  width: 100%;
   background-color: #fff;
   display: flex;
-  // align-items: center;
   justify-content: space-between;
   border-radius: 15px;
-  // margin: 2.5rem 1rem;
-  margin: 2.5vw 1.2vw;
+  -webkit-box-shadow: 0px 0px 100px 2px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 0px 0px 100px 2px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 0px 100px 2px rgba(0, 0, 0, 0.25);
 
   .content {
+    width: 50%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    margin: 3.5vw;
+    padding: 9% 8%;
     font-size: 2.7vw;
     font-weight: lighter;
   }
@@ -22,43 +22,16 @@
 
 .big {
   height: 25vw;
-  width: 50%;
-  max-height: 350px;
+  width: 48.75%;
+  max-height: 335px;
 
   .title {
-    // font-size: 2.8vw;
-    // font-size: 2.25rem;
     word-spacing: 1000px;
   }
-
-  .content {
-    padding-left: 0.2rem;
-  }
-}
-
-.small {
-  // height: 26vw;
-  height: 365px;
-  width: 31%;
-  flex-direction: column;
-
-  .content {
-    gap: 0.8rem;
-  }
-
-  .imgCont {
-    width: 100%;
-  }
-}
-// change this to img-sm
-.smImg {
-  display: block;
-  margin: auto;
-  width: 20%;
 }
 
 .btn {
-  width: 15vw;
+  width: 100%;
   height: 25%;
   background-color: $secondary-color;
   border: none;
@@ -67,17 +40,11 @@
   color: #fff;
 }
 
-.btn-sm {
-  width: 100%;
-  height: 3rem;
-}
-
 @media (min-width: 1350px) {
   .menu-item {
-    margin: 2.5rem 1rem;
+    font-size: 1.5rem;
 
     .content {
-      margin: 3rem;
       font-size: 2.25rem;
     }
 
@@ -88,12 +55,8 @@
 
   .big {
     .btn {
-      // width: 13.7rem;
       font-size: 1.8rem;
     }
-  }
-  .btn-bg {
-    width: 13.75rem;
   }
 
   .small {

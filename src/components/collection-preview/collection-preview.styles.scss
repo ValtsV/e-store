@@ -1,18 +1,26 @@
 .collection-preview {
-  padding: 4rem 4rem 0 4rem;
+  padding-top: 4rem;
+  padding-left: 2vw;
+  padding-right: 2vw;
   display: block;
   margin: 0 auto;
 }
 
 .coll-title {
   opacity: 0.25;
-  font-size: 3rem;
+  font-size: 3.5vw;
 }
 
 .coll-item-list {
   display: flex;
-  //   justify-content: space-between;
+  justify-content: space-between;
   align-items: center;
-  gap: 2.2rem;
+
   margin-top: 1.3rem;
+}
+
+@media (min-width: 1350px) {
+  .coll-title {
+    font-size: 3rem;
+  }
 }

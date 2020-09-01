@@ -3,8 +3,10 @@
 
 .directory-menu {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   max-width: 1350px;
   margin: auto;
   padding-top: 2rem;
+  padding-left: 2vw;
+  padding-right: 2vw;
 }

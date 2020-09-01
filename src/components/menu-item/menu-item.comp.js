@@ -2,17 +2,9 @@ import React from "react";
 import { withRouter } from "react-router-dom";
 import "./menu-item.styles.scss";
 
-const MenuItem = ({ title, price, image, history, linkUrl, match }) => {
-  let imgBig = null;
-  let imgSmall = null;
-  price
-    ? (imgSmall = <img className="smImg" src={image} alt="title" />)
-    : (imgBig = <img className="big" src={image} alt="title" />);
-
+const MenuItem = ({ title, image, history, linkUrl, match }) => {
   return (
-    <div className={`menu-item ${price ? "small" : "big"}`}>
-      <div className="imgCont">{imgSmall}</div>
-
+    <div className="menu-item big">
       <div className="content">
         <span
           className="title"
@@ -20,15 +12,15 @@ const MenuItem = ({ title, price, image, history, linkUrl, match }) => {
         >
           {title}
         </span>
-        {price ? <span className="price">{price}€</span> : null}
+
         <button
           onClick={() => history.push(`${match.url}${linkUrl}`)}
-          className={`btn ${price ? "btn-sm" : "btn-bg"}`}
+          className="btn btn-bg"
         >
           shop now
         </button>
       </div>
-      {imgBig}
+      <img className="big" src={image} alt="title" />
     </div>
   );
 };

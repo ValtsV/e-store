@@ -1,0 +1,19 @@
+.shop-header {
+  padding-top: 1rem;
+  font-size: 1.5rem;
+
+  ul {
+    text-align: center;
+  }
+
+  li {
+    display: inline-block;
+    margin: 0 2rem;
+    padding: 0.8rem 0.5rem;
+  }
+}
+
+.shop-header-underline {
+  border-bottom: 5px solid #90ddf0;
+  cursor: pointer;
+}

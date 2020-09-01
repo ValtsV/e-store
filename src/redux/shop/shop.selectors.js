@@ -26,10 +26,12 @@ export const selectCollectionWomens = (collectionUrlParam) =>
   });
 
 export const selectCollectionMens = (collectionUrlParam) =>
-  createSelector(
-    [selectCollectionsMens],
-    (collections) => collections[collectionUrlParam]
-  );
+  createSelector([selectCollectionsMens], (collections) => {
+    if (!collections[collectionUrlParam]) {
+      return { title: "Oopsie! Nothing's here!", items: null };
+    }
+    return collections[collectionUrlParam];
+  });
 
 export const selectCollection = (collectionUrlParam) =>
   createSelector(
@@ -42,8 +44,7 @@ export const selectCollectionsForPreview = createSelector(
   (collections) => Object.keys(collections).map((key) => collections[key])
 );
 
-export const selectCollectionWom = (collectionUrlParam) =>
-  createSelector(
-    [selectCollections],
-    (collections) => collections[0][collectionUrlParam]
-  );
+export const selectCollectionsForPreviewWomens = createSelector(
+  [selectCollections],
+  (collections) => Object.keys(collections).map((key) => collections[key])
+);
