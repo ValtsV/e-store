@@ -1,0 +1,10 @@
+@import "./config.styles";
+
+.btn {
+  background-color: $secondary-color;
+
+  &:hover {
+    background-color: $alternative-color;
+    color: #000;
+  }
+}

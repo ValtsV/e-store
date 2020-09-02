@@ -1,6 +1,4 @@
 .coll-item {
-  // height: 340px;
-  // width: 300px;
   height: 24vw;
   max-height: 320px;
   width: 23%;
@@ -30,7 +28,6 @@
 .coll-lower {
   height: 47%;
   margin: 0 13% 13% 13%;
-  // margin: 0 2rem 2rem 2rem;
 }
 
 .coll-item-name,
@@ -39,7 +36,7 @@
   font-weight: lighter;
   width: 100%;
   white-space: nowrap;
-  overflow: hidden !important;
+  overflow: hidden;
   text-overflow: ellipsis;
 }
 
