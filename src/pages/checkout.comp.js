@@ -5,42 +5,49 @@ import { connect } from "react-redux";
 import CheckoutItem from "../components/checkout-item/checkout-item.comp";
 
 import "./checkout.styles.scss";
+import "../scss/_utilities.styles.scss";
+import CustomButton from "../components/custom-button/custom-button.comp";
 
-const CheckoutPage = ({ cartItems, total }) => (
-  <div className="checkout-page">
-    <div className="checkout-header">
-      <div className="header-title">
-        <span>your cart</span>
-      </div>
-      <div className="header-block header-block-product">
-        <span>product</span>
-      </div>
+const CheckoutPage = ({ cartItems, total }) => {
+  const cartEmpty = <div className="cart-empty">Your cart is empty</div>;
 
-      <div className="header-block">
-        <span>quantity</span>
+  return (
+    <div className="checkout-page">
+      <div className="checkout-header">
+        <div className="header-title">
+          <span>your cart</span>
+        </div>
+        <div className="header-block header-block-product">
+          <span>product</span>
+        </div>
+
+        <div className="header-block">
+          <span>quantity</span>
+        </div>
+        <div className="header-block">
+          <span>price</span>
+        </div>
+        <div className="header-block">
+          <span>remove</span>
+        </div>
       </div>
-      <div className="header-block">
-        <span>price</span>
-      </div>
-      <div className="header-block">
-        <span>remove</span>
+      {cartItems.length === 0 ? cartEmpty : null}
+      {cartItems.map((cartItem) => (
+        <CheckoutItem key={cartItem.id} cartItem={cartItem} />
+      ))}
+      <div className="checkout-footer">
+        <div className="checkout-footer-box">
+          <span>&#8592; continue shopping</span>
+        </div>
+        <div className="checkout-footer-box">
+          <span className="checkout-total">Total:</span>
+          <span className="checkout-total">{total}€</span>
+          <CustomButton className="btn checkout-btn">checkout</CustomButton>
+        </div>
       </div>
     </div>
-    {cartItems.map((cartItem) => (
-      <CheckoutItem key={cartItem.id} cartItem={cartItem} />
-    ))}
-    <div className="checkout-footer">
-      <div className="checkout-footer-box">
-        <span>&#8592; continue shopping</span>
-      </div>
-      <div className="checkout-footer-box">
-        <span className="checkout-total">Total:</span>
-        <span className="checkout-total">{total}€</span>
-        <button className="btn checkout-btn">checkout</button>
-      </div>
-    </div>
-  </div>
-);
+  );
+};
 
 const mapStateToProps = createStructuredSelector({
   cartItems: selectCartItems,

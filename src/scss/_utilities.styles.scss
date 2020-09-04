@@ -2,9 +2,18 @@
 
 .btn {
   background-color: $secondary-color;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
 
   &:hover {
     background-color: $alternative-color;
     color: #000;
+  }
+}
+
+@media (min-width: 1350px) {
+  .btn {
+    font-size: 2rem;
   }
 }

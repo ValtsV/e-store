@@ -30,14 +30,10 @@
   }
 }
 
-.btn {
+.btn-bg {
   width: 100%;
   height: 25%;
-  // background-color: $secondary-color;
-  border: none;
-  border-radius: 5px;
   font-size: 2vw;
-  color: #fff;
 }
 
 @media (min-width: 1350px) {
@@ -48,13 +44,13 @@
       font-size: 2.25rem;
     }
 
-    .btn {
+    .btn-bg {
       font-size: 2rem;
     }
   }
 
   .big {
-    .btn {
+    .btn-bg {
       font-size: 1.8rem;
     }
   }
