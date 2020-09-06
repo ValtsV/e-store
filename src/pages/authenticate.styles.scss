@@ -1,0 +1,23 @@
+@import "../scss/config.styles";
+
+.auth {
+  width: 460px;
+  margin: 0 auto;
+}
+
+.auth-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem;
+  margin: 1rem 0 0.5rem 0;
+}
+
+.btn-auth-header {
+  background-color: transparent;
+  border: none;
+  font-size: 3rem;
+}
+
+.btn-auth-header-dimmed {
+  opacity: 0.25;
+}

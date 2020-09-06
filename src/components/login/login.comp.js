@@ -3,6 +3,9 @@ import FormInput from "../form-input/form-input.comp";
 import CustomButton from "../custom-button/custom-button.comp";
 import { signInWithGoogle, auth } from "../../firebase/firebase.utils";
 
+import "./login.styles.scss";
+import "../../scss/_utilities.styles.scss";
+
 class Login extends Component {
   constructor(props) {
     super(props);
@@ -35,32 +38,41 @@ class Login extends Component {
   render() {
     return (
       <div className="signin">
-        <span>sign in</span>
-        <span>register</span>
-
-        <form onSubmit={this.handleSubmit}>
-          <FormInput
-            name="email"
-            type="email"
-            value={this.state.email}
-            label="email"
-            handleOnChange={this.handleOnChange}
-            required
-          />
-          <FormInput
-            name="password"
-            type="password"
-            value={this.state.password}
-            label="password"
-            handleOnChange={this.handleOnChange}
-            required
-          />
-          <span>forgot password?</span>
-          <CustomButton type="submit">Sign in</CustomButton>
-          <CustomButton type="button" onClick={signInWithGoogle}>
-            Sign in With Google
-          </CustomButton>
-        </form>
+        <div className="signin-upper">
+          <form className="form" onSubmit={this.handleSubmit}>
+            <FormInput
+              className="qwe"
+              name="email"
+              type="email"
+              value={this.state.email}
+              label="email"
+              placeholder="email@email.com"
+              handleOnChange={this.handleOnChange}
+              required
+            />
+            <FormInput
+              name="password"
+              type="password"
+              value={this.state.password}
+              label="password"
+              placeholder=" "
+              handleOnChange={this.handleOnChange}
+              required
+            />
+            <div className="form-small-text">forgot password?</div>
+            <CustomButton className="btn btn-signin" type="submit">
+              sign in
+            </CustomButton>
+          </form>
+        </div>
+        <span className="surrounding-lines">or</span>
+        <CustomButton
+          className="btn-signin-google"
+          type="button"
+          onClick={signInWithGoogle}
+        >
+          sign in with Google
+        </CustomButton>
       </div>
     );
   }

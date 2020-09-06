@@ -6,10 +6,7 @@ import MenuItem from "../menu-item/menu-item.comp";
 import { createStructuredSelector } from "reselect";
 import { selectDirectorySections } from "../../redux/directory/directory.selectors";
 import { connect } from "react-redux";
-import {
-  selectCollections,
-  selectCollectionsForPreviewWomens,
-} from "../../redux/shop/shop.selectors";
+import { selectCollections } from "../../redux/shop/shop.selectors";
 import CollectionPreview from "../collection-preview/collection-preview.comp";
 
 const Directory = ({ sections, shop_data }) => {

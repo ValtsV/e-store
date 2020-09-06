@@ -3,6 +3,8 @@ import FormInput from "../form-input/form-input.comp";
 import CustomButton from "../custom-button/custom-button.comp";
 import { auth, createUserProfileDocument } from "../../firebase/firebase.utils";
 
+import "./register.styles.scss";
+
 class Register extends Component {
   constructor() {
     super();
@@ -55,7 +57,6 @@ class Register extends Component {
 
     return (
       <div className="register">
-        <span className="signup-title">Sign up</span>
         <form className="signup-form" onSubmit={this.handleSubmit}>
           <FormInput
             type="text"
@@ -63,6 +64,7 @@ class Register extends Component {
             value={displayName}
             onChange={this.handleOnChange}
             label="name"
+            placeholder=" "
             required
           />
           <FormInput
@@ -71,6 +73,7 @@ class Register extends Component {
             value={email}
             onChange={this.handleOnChange}
             label="email"
+            placeholder=" "
             required
           />
           <FormInput
@@ -79,6 +82,8 @@ class Register extends Component {
             value={password}
             onChange={this.handleOnChange}
             label="password"
+            placeholder=" "
+            minLength="8"
             required
           />
           <FormInput
@@ -87,9 +92,15 @@ class Register extends Component {
             value={confirmPassword}
             onChange={this.handleOnChange}
             label="confirm password"
+            placeholder=" "
             required
           />
-          <CustomButton type="submit">sign up</CustomButton>
+          <CustomButton className="btn btn-create-acc" type="submit">
+            create account
+          </CustomButton>
+          <div className="register-small-text">
+            By creating an account You agree to our Terms of Service
+          </div>
         </form>
       </div>
     );

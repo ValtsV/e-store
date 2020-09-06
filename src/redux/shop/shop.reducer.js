@@ -1,6 +1,4 @@
-// import SHOP_DATA from "./dummydata";
-// import SHOP_DATA from "./dummydataCopy";
-import SHOP_DATA from "./dummydataCopyCopy";
+import SHOP_DATA from "./dummydata";
 
 const INITIAL_STATE = {
   collections: SHOP_DATA,

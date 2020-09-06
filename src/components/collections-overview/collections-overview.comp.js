@@ -16,9 +16,6 @@ const CollectionsOverview = ({ collections, match }) => {
       ? Object.values(collections[0])
       : Object.values(collections[1]);
 
-  // const womens = Object.values(collections[0]);
-  // const mens = Object.values(collections[1]);
-
   return (
     <div className="collections-overview">
       {collection.map(({ id, ...otherCollectionProps }) => (
