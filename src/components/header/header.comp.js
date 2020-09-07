@@ -12,28 +12,36 @@ import { selectCurrentUser } from "../../redux/user/user.selector";
 import { selectCartHidden } from "../../redux/cart/cart.selectors";
 
 const Header = ({ currentUser, hidden }) => (
-  <div className="bg-pink padding-sides">
+  <div className="bg-pink">
     <div className="header bg-pink">
       <Link to="/">logo</Link>
-      <ul>
-        <li>
-          <Link to="/shop">shop</Link>
-        </li>
-        {currentUser ? (
-          <li>
-            <div className="pointer" onClick={() => auth.signOut()}>
-              sign out
-            </div>
+      <div className="header-options-cont">
+        <ul>
+          <li className="bigscreen-option">
+            <Link to="/shop">shop</Link>
           </li>
-        ) : (
-          <li>
-            <Link to="/signin">sign in | register</Link>
+          {currentUser ? (
+            <li className="bigscreen-option">
+              <div className="pointer" onClick={() => auth.signOut()}>
+                sign out
+              </div>
+            </li>
+          ) : (
+            <li className="bigscreen-option">
+              <Link to="/signin">sign in | register</Link>
+            </li>
+          )}
+
+          <li className="cart-icon-cont">
+            <CartIcon />
           </li>
-        )}
-        <li>
-          <CartIcon />
-        </li>
-      </ul>
+        </ul>
+        <div class="hamburger">
+          <div class="hamburger-box">
+            <div class="hamburger-inner"></div>
+          </div>
+        </div>
+      </div>
     </div>
     {hidden ? null : <CartDropdown />}
   </div>

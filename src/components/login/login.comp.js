@@ -46,7 +46,7 @@ class Login extends Component {
               type="email"
               value={this.state.email}
               label="email"
-              placeholder="email@email.com"
+              placeholder=" "
               handleOnChange={this.handleOnChange}
               required
             />

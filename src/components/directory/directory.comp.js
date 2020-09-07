@@ -15,7 +15,7 @@ const Directory = ({ sections, shop_data }) => {
   const itemsMen = Object.values(shop_data.mens).map((obj) => obj.items[0]);
 
   return (
-    <div className="p-1 bg">
+    <div className="bg">
       <div className="directory-menu">
         {sections.map(({ id, ...sectionProps }) => (
           <MenuItem key={id} {...sectionProps} />
