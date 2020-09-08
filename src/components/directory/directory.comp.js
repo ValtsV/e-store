@@ -3,11 +3,13 @@ import React from "react";
 import "./directory.styles.scss";
 
 import MenuItem from "../menu-item/menu-item.comp";
+import MenuItemSwiper from "../menu-item-swiper/menu-item-swiper.comp";
 import { createStructuredSelector } from "reselect";
 import { selectDirectorySections } from "../../redux/directory/directory.selectors";
 import { connect } from "react-redux";
 import { selectCollections } from "../../redux/shop/shop.selectors";
 import CollectionPreview from "../collection-preview/collection-preview.comp";
+import CollectionSwiper from "../collection-swiper/collection-swiper.comp";
 
 const Directory = ({ sections, shop_data }) => {
   console.log(Object.values(shop_data.womens).map((obj) => obj.items[0]));
@@ -23,6 +25,8 @@ const Directory = ({ sections, shop_data }) => {
       </div>
       <CollectionPreview title="title" items={items} />
       <CollectionPreview title="mens" items={itemsMen} />
+      <CollectionSwiper />
+      <MenuItemSwiper />
     </div>
   );
 };
