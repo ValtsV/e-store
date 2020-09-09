@@ -14,7 +14,7 @@ SwiperCore.use([Pagination, Navigation]);
 
 const MenuItemSwiper = ({ sections }) => {
   const slides = sections.map(({ id, ...sectionProps }) => (
-    <SwiperSlide>
+    <SwiperSlide key={id}>
       <div className="menu-item-wrapper">
         <MenuItemMobile key={id} {...sectionProps} />
       </div>

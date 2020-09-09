@@ -10,23 +10,35 @@ import { connect } from "react-redux";
 import { selectCollections } from "../../redux/shop/shop.selectors";
 import CollectionPreview from "../collection-preview/collection-preview.comp";
 import CollectionSwiper from "../collection-swiper/collection-swiper.comp";
+import CollectionPreviewSwiper from "../collection-preview-swiper/collection-preview-swiper.comp";
+import useWindowDimensions from "./directory.hooks";
 
 const Directory = ({ sections, shop_data }) => {
-  console.log(Object.values(shop_data.womens).map((obj) => obj.items[0]));
+  // console.log(Object.values(shop_data.womens).map((obj) => obj.items[0]));
   const items = Object.values(shop_data.womens).map((obj) => obj.items[0]);
   const itemsMen = Object.values(shop_data.mens).map((obj) => obj.items[0]);
 
+  const width = useWindowDimensions() > 768 ? true : false;
+
   return (
     <div className="bg">
-      <div className="directory-menu">
-        {sections.map(({ id, ...sectionProps }) => (
-          <MenuItem key={id} {...sectionProps} />
-        ))}
-      </div>
-      <CollectionPreview title="title" items={items} />
-      <CollectionPreview title="mens" items={itemsMen} />
-      <CollectionSwiper />
-      <MenuItemSwiper />
+      {width ? (
+        <div>
+          <div className="directory-menu">
+            {sections.map(({ id, ...sectionProps }) => (
+              <MenuItem key={id} {...sectionProps} />
+            ))}
+          </div>
+          <CollectionPreview title="title" items={items} />
+          <CollectionPreview title="mens" items={itemsMen} />
+        </div>
+      ) : (
+        <div>
+          <MenuItemSwiper />
+          <CollectionPreviewSwiper title="womens" items={items} />
+          <CollectionPreviewSwiper title="mens" items={itemsMen} />
+        </div>
+      )}
     </div>
   );
 };

@@ -36,9 +36,9 @@ const Header = ({ currentUser, hidden }) => (
             <CartIcon />
           </li>
         </ul>
-        <div class="hamburger">
-          <div class="hamburger-box">
-            <div class="hamburger-inner"></div>
+        <div className="hamburger">
+          <div className="hamburger-box">
+            <div className="hamburger-inner"></div>
           </div>
         </div>
       </div>
