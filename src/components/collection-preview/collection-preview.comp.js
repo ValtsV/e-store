@@ -1,9 +1,6 @@
 import React from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import SwiperCore, { Pagination, Navigation } from "swiper";
 
 import "./collection-preview.styles.scss";
-import "swiper/swiper.scss";
 
 import CollectionItem from "../collection-item/collection-item.comp";
 

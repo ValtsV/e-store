@@ -1,6 +1,8 @@
+@import "../../scss/config.styles";
+
 @media (max-width: 767px) {
   .coll-item-wrapper {
-    height: 400px;
+    height: 420px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -8,7 +10,7 @@
   }
 
   .coll-item-wrapper-wrapper {
-    width: 96%;
+    width: 100%;
   }
 
   .coll-title {
@@ -18,7 +20,38 @@
     padding-left: 1.5rem;
   }
 
+  .coll-item-contentino {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    align-items: center;
+    justify-content: space-between;
+    margin: auto;
+    padding: 15% 0 9% 0;
+    font-weight: lighter;
+    font-size: 1.5rem;
+  }
+
+  .bg-alt {
+    background-color: $alternative-color;
+  }
+
   .rando {
     height: 400px;
+  }
+
+  .swiper {
+    padding-left: 2vw;
+  }
+
+  .btn-last-slide {
+    width: 100%;
+    height: 4rem;
+    border: solid 1px $secondary-color;
+    border-radius: 10px;
+    font-weight: lighter;
+    font-size: 1.5rem;
+    color: #fff;
   }
 }

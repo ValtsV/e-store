@@ -41,9 +41,9 @@ const Header = ({ currentUser, hidden }) => (
             <div className="hamburger-inner"></div>
           </div>
         </div>
+        {hidden ? null : <CartDropdown />}
       </div>
     </div>
-    {hidden ? null : <CartDropdown />}
   </div>
 );
 

@@ -21,3 +21,9 @@
 .btn-auth-header-dimmed {
   opacity: 0.25;
 }
+
+@media (max-width: 460px) {
+  .auth {
+    width: 360px;
+  }
+}

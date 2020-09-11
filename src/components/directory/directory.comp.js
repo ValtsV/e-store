@@ -9,7 +9,6 @@ import { selectDirectorySections } from "../../redux/directory/directory.selecto
 import { connect } from "react-redux";
 import { selectCollections } from "../../redux/shop/shop.selectors";
 import CollectionPreview from "../collection-preview/collection-preview.comp";
-import CollectionSwiper from "../collection-swiper/collection-swiper.comp";
 import CollectionPreviewSwiper from "../collection-preview-swiper/collection-preview-swiper.comp";
 import useWindowDimensions from "./directory.hooks";
 
@@ -18,7 +17,7 @@ const Directory = ({ sections, shop_data }) => {
   const items = Object.values(shop_data.womens).map((obj) => obj.items[0]);
   const itemsMen = Object.values(shop_data.mens).map((obj) => obj.items[0]);
 
-  const width = useWindowDimensions() > 768 ? true : false;
+  const width = useWindowDimensions() > 767 ? true : false;
 
   return (
     <div className="bg">
