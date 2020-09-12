@@ -7,16 +7,19 @@ import { auth } from "../../firebase/firebase.utils";
 import "../../scss/_config.styles.scss";
 import CartIcon from "../cart-icon/cart-icon.comp";
 import CartDropdown from "../cart-dropdown.comp.js/cart-dropdown.comp";
+import HambMenu from "../hamb-menu/hamb-menu.comp";
 import { createStructuredSelector } from "reselect";
 import { selectCurrentUser } from "../../redux/user/user.selector";
 import { selectCartHidden } from "../../redux/cart/cart.selectors";
+import { selectNavHidden } from "../../redux/nav/nav.selectors";
+import { toggleHambMenu } from "../../redux/nav/nav.actions";
 
-const Header = ({ currentUser, hidden }) => (
+const Header = ({ currentUser, hidden, hambMenuHidden, toggleHambMenu }) => (
   <div className="bg-pink">
     <div className="header bg-pink">
       <Link to="/">logo</Link>
       <div className="header-options-cont">
-        <ul>
+        <ul className="main-nav-list">
           <li className="bigscreen-option">
             <Link to="/shop">shop</Link>
           </li>
@@ -36,20 +39,26 @@ const Header = ({ currentUser, hidden }) => (
             <CartIcon />
           </li>
         </ul>
-        <div className="hamburger">
+        <div className="hamburger" onClick={toggleHambMenu}>
           <div className="hamburger-box">
             <div className="hamburger-inner"></div>
           </div>
         </div>
         {hidden ? null : <CartDropdown />}
+        {hambMenuHidden ? null : <HambMenu />}
       </div>
     </div>
   </div>
 );
 
+const mapDispatchToProps = (dispatch) => ({
+  toggleHambMenu: () => dispatch(toggleHambMenu()),
+});
+
 const mapStateToProps = createStructuredSelector({
   currentUser: selectCurrentUser,
   hidden: selectCartHidden,
+  hambMenuHidden: selectNavHidden,
 });
 
-export default connect(mapStateToProps)(Header);
+export default connect(mapStateToProps, mapDispatchToProps)(Header);

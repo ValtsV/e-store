@@ -55,8 +55,6 @@ const mapStateToProps = (state, ownProps) => ({
   collectionMens: selectCollectionMens(ownProps.match.params.collectionId)(
     state
   ),
-
-  // collection: selectCollectionsForPreview,
 });
 
 export default connect(mapStateToProps)(CollectionPage);

@@ -16,14 +16,6 @@ const CollectionsOverview = ({ collections, match }) => {
       ? Object.values(collections[0])
       : Object.values(collections[1]);
 
-  const slides = collection.map(({ id, ...otherCollectionProps }) => (
-    <div className="coll-item-wrapper">
-      <div className="coll-item-wrapper-wrapper">
-        <CollectionPreviewSwiper key={id} {...otherCollectionProps} />
-      </div>
-    </div>
-  ));
-
   return (
     <div className="collections-overview">
       {width > 767
