@@ -6,6 +6,8 @@ import { createStructuredSelector } from "reselect";
 import CollectionPreviewSwiper from "../collection-preview-swiper/collection-preview-swiper.comp";
 import useWindowDimensions from "../directory/directory.hooks";
 
+import "./collections-overview.styles.scss";
+
 const CollectionsOverview = ({ collections, match }) => {
   const width = useWindowDimensions();
 
@@ -29,9 +31,13 @@ const CollectionsOverview = ({ collections, match }) => {
             <CollectionPreview key={id} {...otherCollectionProps} />
           ))
         : collection.map(({ id, ...otherCollectionProps }) => (
-            <div className="coll-item-wrapper">
+            <div className="coll-item-wrapper" key={id}>
               <div className="coll-item-wrapper-wrapper">
-                <CollectionPreviewSwiper key={id} {...otherCollectionProps} />
+                <CollectionPreviewSwiper
+                  key={id}
+                  length={4}
+                  {...otherCollectionProps}
+                />
               </div>
             </div>
           ))}

@@ -13,7 +13,6 @@ import CollectionPreviewSwiper from "../collection-preview-swiper/collection-pre
 import useWindowDimensions from "./directory.hooks";
 
 const Directory = ({ sections, shop_data }) => {
-  // console.log(Object.values(shop_data.womens).map((obj) => obj.items[0]));
   const items = Object.values(shop_data.womens).map((obj) => obj.items[0]);
   const itemsMen = Object.values(shop_data.mens).map((obj) => obj.items[0]);
 
@@ -34,8 +33,8 @@ const Directory = ({ sections, shop_data }) => {
       ) : (
         <div>
           <MenuItemSwiper />
-          <CollectionPreviewSwiper title="womens" items={items} />
-          <CollectionPreviewSwiper title="mens" items={itemsMen} />
+          <CollectionPreviewSwiper title="womens" items={items} length={4} />
+          <CollectionPreviewSwiper title="mens" items={itemsMen} length={4} />
         </div>
       )}
     </div>

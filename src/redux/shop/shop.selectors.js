@@ -20,7 +20,7 @@ export const selectCollectionsMens = createSelector(
 export const selectCollectionWomens = (collectionUrlParam) =>
   createSelector([selectCollectionsWomens], (collections) => {
     if (!collections[collectionUrlParam]) {
-      return { title: "Oopsie! Nothing's here!", items: null };
+      return { title: "Oopsie! Nothing's here!", items: false };
     }
     return collections[collectionUrlParam];
   });
@@ -28,7 +28,7 @@ export const selectCollectionWomens = (collectionUrlParam) =>
 export const selectCollectionMens = (collectionUrlParam) =>
   createSelector([selectCollectionsMens], (collections) => {
     if (!collections[collectionUrlParam]) {
-      return { title: "Oopsie! Nothing's here!", items: null };
+      return { title: "Oopsie! Nothing's here!", items: false };
     }
     return collections[collectionUrlParam];
   });

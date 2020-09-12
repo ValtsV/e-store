@@ -10,24 +10,7 @@ import CustomButton from "../custom-button/custom-button.comp";
 import { useState, useEffect } from "react";
 import useWindowDimensions from "../directory/directory.hooks";
 
-const CollectionPreviewSwiper = ({ title, items }) => {
-  // const getWindowWidth = () => window.innerWidth;
-
-  // function useWindowDimensions() {
-  //   const [windowDimensions, setWindowDimensions] = useState(getWindowWidth());
-
-  //   useEffect(() => {
-  //     function handleResize() {
-  //       setWindowDimensions(getWindowWidth());
-  //     }
-
-  //     window.addEventListener("resize", handleResize);
-  //     return () => window.removeEventListener("resize", handleResize);
-  //   }, []);
-
-  //   return windowDimensions;
-  // }
-
+const CollectionPreviewSwiper = ({ title, items, length, lastSlide }) => {
   const width = useWindowDimensions();
   let spwRatio = 1.2;
   let trans = null;
@@ -40,7 +23,7 @@ const CollectionPreviewSwiper = ({ title, items }) => {
   }
 
   const slides = items
-    .filter((item, index) => index < 4)
+    .filter((item, index) => index < length)
     .map((item) => (
       <SwiperSlide key={item.id} style={{ width: spwRatio + "%" }}>
         <div className="coll-item-wrapper">
@@ -57,30 +40,25 @@ const CollectionPreviewSwiper = ({ title, items }) => {
       <Swiper
         className="swiper"
         slidesPerView={width > 414 ? "auto" : 1.2}
-        spaceBetween={5}
-        // centeredSlides={width > 414 ? false : true}
-        // style={{ transform: trans }}
-        // centeredSlides={false}
+        spaceBetween={15}
       >
         {slides}
-        <SwiperSlide style={{ width: spwRatio + "%" }}>
-          <div className="coll-item-wrapper">
-            <div className="coll-item-wrapper-wrapper">
-              {/* <div className="final-slide"> */}
-              <div className="coll-item bg-alt">
-                <div className="coll-item-contentino">
-                  {/* <div className="divDummy">Yo Say Smth</div> */}
-                  <span>Want to see more?</span>
-                  {/* <div className="coll-lower"> */}
-                  <CustomButton className="btn btn-last-slide">
-                    lets go
-                  </CustomButton>
-                  {/* </div> */}
+        {lastSlide ? (
+          <SwiperSlide style={{ width: spwRatio + "%" }}>
+            <div className="coll-item-wrapper">
+              <div className="coll-item-wrapper-wrapper">
+                <div className="coll-item bg-alt">
+                  <div className="coll-item-contentino">
+                    <span>Want to see more?</span>
+                    <CustomButton className="btn btn-last-slide">
+                      lets go
+                    </CustomButton>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        </SwiperSlide>
+          </SwiperSlide>
+        ) : null}
       </Swiper>
     </div>
   );
