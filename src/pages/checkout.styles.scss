@@ -44,10 +44,8 @@
 
 .checkout-footer {
   position: relative;
-  height: 90px;
   width: 106%;
   left: -3%;
-
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -77,5 +75,39 @@
 
   .checkout-total {
     padding-right: 2.7rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .header-block {
+    display: none;
+  }
+
+  .checkout-header {
+    justify-content: start;
+    padding-bottom: 0.5rem;
+    padding-left: 1rem;
+  }
+
+  .checkout-page {
+    margin: 0 2vw;
+    margin-top: 1rem;
+    padding: 1.25rem 1.5rem 1.25rem 1.5rem;
+  }
+
+  .checkout-footer {
+    margin-top: 1.3rem;
+    flex-direction: column;
+    height: 180px;
+  }
+
+  .checkout-btn {
+    margin-top: 1rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .checkout-footer {
+    height: 90px;
   }
 }

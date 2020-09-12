@@ -94,6 +94,12 @@
   }
 }
 
+@media (max-width: 767px) {
+  .header {
+    height: 40px;
+  }
+}
+
 @media (min-width: 768px) {
   .hamburger {
     display: none;

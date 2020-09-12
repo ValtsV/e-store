@@ -2,12 +2,14 @@
   position: absolute;
   z-index: 2;
   margin-top: 1rem;
+  margin-left: 7rem;
   background-color: #fff;
-  width: 400px;
+  width: 320px;
   border-radius: 10px;
   -webkit-box-shadow: 0px 0px 50px 2px rgba(0, 0, 0, 0.25);
   -moz-box-shadow: 0px 0px 50px 2px rgba(0, 0, 0, 0.25);
   box-shadow: 0px 0px 50px 2px rgba(0, 0, 0, 0.25);
+  font-size: 1rem;
 
   .cart-dropdown-items {
     width: 80%;
@@ -43,8 +45,6 @@
 @media (max-width: 414px) {
   .cart-dropdown {
     right: 0vw;
-
-    width: 100vw;
 
     .cart-dropdown-items {
       width: 85%;

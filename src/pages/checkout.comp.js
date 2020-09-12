@@ -31,10 +31,12 @@ const CheckoutPage = ({ cartItems, total }) => {
           <span>remove</span>
         </div>
       </div>
-      {cartItems.length === 0 ? cartEmpty : null}
-      {cartItems.map((cartItem) => (
-        <CheckoutItem key={cartItem.id} cartItem={cartItem} />
-      ))}
+      <div className="chkout-items-cont">
+        {cartItems.length === 0 ? cartEmpty : null}
+        {cartItems.map((cartItem) => (
+          <CheckoutItem key={cartItem.id} cartItem={cartItem} />
+        ))}
+      </div>
       <div className="checkout-footer">
         <div className="checkout-footer-box">
           <span>&#8592; continue shopping</span>
