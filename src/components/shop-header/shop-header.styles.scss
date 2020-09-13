@@ -21,3 +21,13 @@
   border-bottom: 5px solid #90ddf0;
   cursor: pointer;
 }
+
+.haha {
+  height: 60px;
+}
+
+@media (max-width: 767px) {
+  .haha {
+    display: none;
+  }
+}

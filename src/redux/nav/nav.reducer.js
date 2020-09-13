@@ -1,13 +1,14 @@
 import NavActionTypes from "./nav.types";
 
 const INITIAL_STATE = {
-  hambMenuHidden: false,
+  hambMenuHidden: true,
 };
 
 const navReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case NavActionTypes.TOGGLE_HAMB_MENU:
       return { ...state, hambMenuHidden: !state.hambMenuHidden };
+
     default:
       return state;
   }

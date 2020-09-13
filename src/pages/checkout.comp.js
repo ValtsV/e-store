@@ -7,6 +7,7 @@ import CheckoutItem from "../components/checkout-item/checkout-item.comp";
 import "./checkout.styles.scss";
 import "../scss/_utilities.styles.scss";
 import CustomButton from "../components/custom-button/custom-button.comp";
+import { Link } from "react-router-dom";
 
 const CheckoutPage = ({ cartItems, total }) => {
   const cartEmpty = <div className="cart-empty">Your cart is empty</div>;
@@ -39,7 +40,9 @@ const CheckoutPage = ({ cartItems, total }) => {
       </div>
       <div className="checkout-footer">
         <div className="checkout-footer-box">
-          <span>&#8592; continue shopping</span>
+          <span>
+            <Link to="/womens">&#8592; continue shopping</Link>
+          </span>
         </div>
         <div className="checkout-footer-box">
           <span className="checkout-total">Total:</span>

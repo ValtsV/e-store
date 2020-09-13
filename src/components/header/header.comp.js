@@ -21,7 +21,7 @@ const Header = ({ currentUser, hidden, hambMenuHidden, toggleHambMenu }) => (
       <div className="header-options-cont">
         <ul className="main-nav-list">
           <li className="bigscreen-option">
-            <Link to="/shop">shop</Link>
+            <Link to="/womens">shop</Link>
           </li>
           {currentUser ? (
             <li className="bigscreen-option">

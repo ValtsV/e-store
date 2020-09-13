@@ -17,7 +17,8 @@
     font-size: 2rem;
     position: relative;
     top: 25px;
-    padding-left: 1.5rem;
+    padding-left: 0.9rem;
+    z-index: 2;
   }
 
   .coll-item-contentino {
@@ -53,5 +54,9 @@
     font-weight: lighter;
     font-size: 1.5rem;
     color: #fff;
+  }
+
+  .btn-last-slide-wrapper {
+    width: 100%;
   }
 }

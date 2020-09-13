@@ -20,13 +20,18 @@ const CollectionsOverview = ({ collections, match }) => {
     <div className="collections-overview">
       {width > 767
         ? collection.map(({ id, ...otherCollectionProps }) => (
-            <CollectionPreview key={id} {...otherCollectionProps} />
+            <CollectionPreview
+              key={id}
+              path={match.path}
+              {...otherCollectionProps}
+            />
           ))
         : collection.map(({ id, ...otherCollectionProps }) => (
             <div className="coll-item-wrapper" key={id}>
               <div className="coll-item-wrapper-wrapper">
                 <CollectionPreviewSwiper
                   key={id}
+                  path={match.path}
                   length={4}
                   {...otherCollectionProps}
                 />

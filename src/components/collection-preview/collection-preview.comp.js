@@ -3,11 +3,14 @@ import React from "react";
 import "./collection-preview.styles.scss";
 
 import CollectionItem from "../collection-item/collection-item.comp";
+import { Link } from "react-router-dom";
 
-const CollectionPreview = ({ title, items }) => {
+const CollectionPreview = ({ title, items, path }) => {
   return (
     <div className="collection-preview">
-      <span className="coll-title">{title.toLowerCase()}</span>
+      <span className="coll-title">
+        <Link to={`${path}/${title.toLowerCase()}`}>{title.toLowerCase()}</Link>
+      </span>
       <div className="coll-item-list">
         {items
           .filter((item, index) => index < 4)

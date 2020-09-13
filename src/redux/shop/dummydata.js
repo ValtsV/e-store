@@ -158,8 +158,8 @@ const ShopData = {
 
     dresses: {
       id: 4,
-      title: "Womens",
-      routeName: "womens",
+      title: "Dresses",
+      routeName: "dresses",
       items: [
         {
           id: 31,
@@ -208,8 +208,8 @@ const ShopData = {
 
     shirts: {
       id: 5,
-      title: "Mens",
-      routeName: "mens",
+      title: "Shirts",
+      routeName: "shirts",
       items: [
         {
           id: 41,
@@ -407,10 +407,10 @@ const ShopData = {
       ],
     },
 
-    dresses: {
+    jackets: {
       id: 44,
-      title: "Womens",
-      routeName: "womens",
+      title: "Jackets",
+      routeName: "jackets",
       items: [
         {
           id: 131,
@@ -459,8 +459,8 @@ const ShopData = {
 
     shirts: {
       id: 55,
-      title: "Mens",
-      routeName: "mens",
+      title: "Shirts",
+      routeName: "shirts",
       items: [
         {
           id: 141,
