@@ -13,11 +13,13 @@ const CollectionItem = ({ item, addItem }) => {
     <div className="coll-item">
       <div className="coll-item-content">
         {/* <img src={require(imageUrl)} alt="image" className="coll-item-image" /> */}
-        {/* <div
-          style={{ backgroundImage: `url(${imageUrl})` }}
-          className="coll-item-image"
-        ></div> */}
-        <div className="divDummy"></div>
+
+        <div className="divDummy">
+          <div
+            style={{ backgroundImage: `url(${imageUrl})` }}
+            className="coll-item-image"
+          ></div>
+        </div>
         <div className="coll-lower">
           <span className="coll-item-name">{name}</span>
           <span className="coll-item-price">{price}€</span>

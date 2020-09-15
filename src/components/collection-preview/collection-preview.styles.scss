@@ -1,5 +1,5 @@
 .collection-preview {
-  padding-top: 4rem;
+  padding-top: 1.5rem;
   padding-left: 2vw;
   padding-right: 2vw;
   display: block;
@@ -29,4 +29,10 @@
   .coll-title {
     font-size: 3rem;
   }
+}
+
+@media (max-width: 767px) {
+  // .collection-preview {
+  //   padding-top: 6rem;
+  // }
 }

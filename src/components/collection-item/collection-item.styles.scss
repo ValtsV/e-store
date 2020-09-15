@@ -2,6 +2,7 @@
   height: 24vw;
   max-height: 320px;
   width: 23%;
+  margin-bottom: 2.5rem;
   background-color: #fff;
   border-radius: 15px;
   -webkit-box-shadow: 0px 0px 50px 2px rgba(0, 0, 0, 0.25);
@@ -10,10 +11,15 @@
 }
 
 .coll-item-image {
-  width: 50px;
-  height: 50px;
+  position: relative;
+  bottom: 30%;
+  right: 7%;
+
+  width: 15vw;
+  height: 15vw;
   background-size: cover;
-  z-index: 10;
+  margin: auto;
+  overflow: visible;
 }
 
 .coll-item-content {
@@ -29,11 +35,13 @@
 }
 
 .divDummy {
-  height: 53%;
+  height: 50%;
+  width: 60%;
+  margin: auto;
 }
 
 .coll-lower {
-  height: 47%;
+  height: 50%;
   margin: 0 13% 9% 13%;
 }
 
@@ -59,6 +67,13 @@
   color: #fff;
 }
 
+@media (min-width: 1350px) {
+  .coll-item-image {
+    width: 200px;
+    height: 200px;
+  }
+}
+
 @media (min-width: 1080px) {
   .coll-item-name,
   .coll-item-price {
@@ -75,6 +90,13 @@
   .coll-item {
     width: 320px;
     height: 330px;
+  }
+
+  .coll-item-image {
+    width: 50vw;
+    height: 50vw;
+    max-width: 200px;
+    max-height: 200px;
   }
 
   .btn-item {
