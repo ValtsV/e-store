@@ -4,13 +4,13 @@ const INITIAL_STATE = {
       id: "b1",
       title: "womens collection",
       linkUrl: "womens",
-      image: "",
+      image: "https://i.ibb.co/cx00vZc/chick.png",
     },
     {
       id: "b2",
       title: "mens collection",
       linkUrl: "mens",
-      image: "",
+      image: "https://i.ibb.co/1KyP4y6/chico.png",
     },
   ],
 };

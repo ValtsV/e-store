@@ -21,7 +21,13 @@ const MenuItem = ({ title, image, history, linkUrl, match }) => {
           shop now
         </button>
       </div>
-      <img className="big" src={image} alt="title" />
+      {/* <img className="big" src={image} alt="title" /> */}
+      <div className="big">
+        <div
+          className={`menu-item-image ${title === "mens" ? "men-image" : null}`}
+          style={{ backgroundImage: `url(${image})` }}
+        ></div>
+      </div>
     </div>
   );
 };

@@ -7,7 +7,14 @@ const MenuItemMobile = ({ title, image, history, linkUrl, match }) => {
   return (
     <div className="menu-item-mobile">
       <div className="menu-item-mobile-content">
-        <img className="menu-item-img-mobile" src={image} alt="title" />
+        <div className="menu-item-image-mobile-cont">
+          <div
+            className={`menu-item-image-mobile ${
+              title === "mens" ? "men-image" : null
+            }`}
+            style={{ backgroundImage: `url(${image})` }}
+          ></div>
+        </div>
         <button
           onClick={() => history.push(`${match.url}${linkUrl}`)}
           className="btn btn-bg-mobile"

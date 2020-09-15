@@ -17,7 +17,7 @@ import { toggleHambMenu } from "../../redux/nav/nav.actions";
 const Header = ({ currentUser, hidden, hambMenuHidden, toggleHambMenu }) => (
   <div className="bg-pink">
     <div className="header bg-pink">
-      <Link to="/">logo</Link>
+      <Link to="/">test v</Link>
       <div className="header-options-cont">
         <ul className="main-nav-list">
           <li className="bigscreen-option">

@@ -37,6 +37,18 @@
   font-weight: lighter;
 }
 
+.menu-item-image {
+  position: relative;
+  bottom: 20%;
+  height: 110%;
+  width: 85%;
+  background-size: 100% 100%;
+}
+
+.men-image {
+  margin-left: 1.5rem;
+}
+
 @media (min-width: 1350px) {
   .menu-item {
     font-size: 1.5rem;
@@ -66,5 +78,13 @@
   .big {
     height: 50vw;
     width: 97.5%;
+  }
+
+  .menu-item-image {
+    position: relative;
+    bottom: 20%;
+    height: 160%;
+    width: 85%;
+    // background-size: 100% 100%;
   }
 }

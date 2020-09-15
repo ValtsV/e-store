@@ -13,7 +13,10 @@ const CheckoutItem = ({ cartItem, clearItem, addItem, removeItem }) => {
   return (
     <div className="checkout-item">
       <div className="chck-item-img">
-        <div className="image-cont">img</div>
+        <div
+          className="image-cont"
+          style={{ backgroundImage: `url(${imageUrl})` }}
+        ></div>
       </div>
       <div className="product-flex">
         <div className="chck-item-block chck-item-name">
