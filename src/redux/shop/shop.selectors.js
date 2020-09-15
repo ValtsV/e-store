@@ -1,4 +1,5 @@
 import { createSelector } from "reselect";
+import memoize from "lodash.memoize";
 
 const selectShop = (state) => state.shop;
 
@@ -17,27 +18,30 @@ export const selectCollectionsMens = createSelector(
   (shop) => shop.collections.mens
 );
 
-export const selectCollectionWomens = (collectionUrlParam) =>
+export const selectCollectionWomens = memoize((collectionUrlParam) =>
   createSelector([selectCollectionsWomens], (collections) => {
     if (!collections[collectionUrlParam]) {
       return { title: "Oopsie! Nothing's here!", items: false };
     }
     return collections[collectionUrlParam];
-  });
+  })
+);
 
-export const selectCollectionMens = (collectionUrlParam) =>
+export const selectCollectionMens = memoize((collectionUrlParam) =>
   createSelector([selectCollectionsMens], (collections) => {
     if (!collections[collectionUrlParam]) {
       return { title: "Oopsie! Nothing's here!", items: false };
     }
     return collections[collectionUrlParam];
-  });
+  })
+);
 
-export const selectCollection = (collectionUrlParam) =>
+export const selectCollection = memoize((collectionUrlParam) =>
   createSelector(
     [selectCollections],
     (collections) => collections[collectionUrlParam]
-  );
+  )
+);
 
 export const selectCollectionsForPreview = createSelector(
   [selectCollections],
