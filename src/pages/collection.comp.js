@@ -26,7 +26,7 @@ const CollectionPage = ({ collectionWomens, collectionMens, match }) => {
       {width ? (
         <div>
           <div className="coll-page-title">{title.toLowerCase()}</div>
-          <div className="coll-item-list coll-page-items">
+          <div className="coll-item-list-long coll-page-items">
             {items.map((item) => (
               <CollectionItem key={item.id} item={item} />
             ))}

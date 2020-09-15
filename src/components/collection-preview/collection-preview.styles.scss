@@ -11,12 +11,18 @@
   font-size: 3.5vw;
 }
 
-.coll-item-list {
+.coll-item-list,
+.coll-item-list-long {
   display: flex;
   justify-content: space-between;
   align-items: center;
 
   margin-top: 1.3rem;
+}
+
+.coll-item-list-long::after {
+  content: "";
+  flex: auto;
 }
 
 @media (min-width: 1350px) {
