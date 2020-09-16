@@ -8,16 +8,22 @@ import { auth } from "../../firebase/firebase.utils";
 import "../../scss/_config.styles.scss";
 import { createStructuredSelector } from "reselect";
 import { selectCurrentUser } from "../../redux/user/user.selector";
+import { toggleHambMenu } from "../../redux/nav/nav.actions";
+import { selectNavHidden } from "../../redux/nav/nav.selectors";
 
-const HambMenu = ({ currentUser }) => (
+const HambMenu = ({ currentUser, toggleHambMenu }) => (
   <div className="hamb-menu">
     <div className="hamb-menu-flex-cont">
       <ul className="hamb-menu-list">
         <li>
-          <Link to="/mens">mens</Link>
+          <Link to="/womens" onClick={toggleHambMenu}>
+            womens
+          </Link>
         </li>
         <li>
-          <Link to="/womens">womens</Link>
+          <Link to="/mens" onClick={toggleHambMenu}>
+            mens
+          </Link>
         </li>
         {currentUser ? (
           <li>
@@ -27,19 +33,29 @@ const HambMenu = ({ currentUser }) => (
           </li>
         ) : (
           <li>
-            <Link to="/signin">sign in | register</Link>
+            <Link to="/signin" onClick={toggleHambMenu}>
+              sign in | register
+            </Link>
           </li>
         )}
         <li>
-          <Link to="/checkout">checkout</Link>
+          <Link to="/checkout" onClick={toggleHambMenu}>
+            checkout
+          </Link>
         </li>
       </ul>
     </div>
   </div>
 );
 
-const mapStateToProps = createStructuredSelector({
-  currentUser: selectCurrentUser,
+const mapDispatchToProps = (dispatch) => ({
+  toggleHambMenu: () => dispatch(toggleHambMenu()),
 });
 
-export default connect(mapStateToProps)(HambMenu);
+const mapStateToProps = createStructuredSelector({
+  currentUser: selectCurrentUser,
+
+  hambMenuHidden: selectNavHidden,
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(HambMenu);

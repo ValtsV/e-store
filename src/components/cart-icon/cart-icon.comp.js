@@ -11,7 +11,7 @@ import cartImg from "./shopping-cart.svg";
 const CartIcon = ({ toggleCartHidden, itemCount }) => (
   <div className="cart-icon" onClick={toggleCartHidden}>
     <span className="item-count">{itemCount}</span>
-    <img src={cartImg} className="shopping-icon"></img>
+    <img src={cartImg} alt={"cart-icon"} className="shopping-icon"></img>
   </div>
 );
 

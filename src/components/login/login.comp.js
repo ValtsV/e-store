@@ -26,6 +26,7 @@ class Login extends Component {
       this.setState({ email: "", password: "" });
     } catch (error) {
       console.error(error);
+      alert("Incorrect username / email");
     }
   };
 

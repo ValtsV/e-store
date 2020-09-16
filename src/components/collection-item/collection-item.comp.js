@@ -8,12 +8,9 @@ import CustomButton from "../custom-button/custom-button.comp";
 
 const CollectionItem = ({ item, addItem }) => {
   const { name, price, imageUrl } = item;
-  console.log(imageUrl);
   return (
     <div className="coll-item">
       <div className="coll-item-content">
-        {/* <img src={require(imageUrl)} alt="image" className="coll-item-image" /> */}
-
         <div className="divDummy">
           <div
             style={{ backgroundImage: `url(${imageUrl})` }}

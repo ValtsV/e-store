@@ -6,8 +6,8 @@ import CheckoutItem from "../components/checkout-item/checkout-item.comp";
 
 import "./checkout.styles.scss";
 import "../scss/_utilities.styles.scss";
-import CustomButton from "../components/custom-button/custom-button.comp";
 import { Link } from "react-router-dom";
+import StripeCheckoutButton from "../components/stripe-button/stripe-button.comp";
 
 const CheckoutPage = ({ cartItems, total }) => {
   const cartEmpty = <div className="cart-empty">Your cart is empty</div>;
@@ -47,7 +47,7 @@ const CheckoutPage = ({ cartItems, total }) => {
         <div className="checkout-footer-box">
           <span className="checkout-total">Total:</span>
           <span className="checkout-total">{total}€</span>
-          <CustomButton className="btn checkout-btn">checkout</CustomButton>
+          <StripeCheckoutButton className="btn checkout-btn" price={total} />
         </div>
       </div>
     </div>
