@@ -15,34 +15,36 @@ const AuthenticatePage = ({ view, toggleView }) => {
 
   return (
     <div className="auth">
-      <div className="auth-header">
-        <CustomButton
-          className={`btn-auth-header ${
-            view ? "btn-auth-header-dimmed" : null
-          }`}
-          onClick={() => {
-            if (view) {
-              toggleView();
-            }
-          }}
-        >
-          sign in
-        </CustomButton>
-        <CustomButton
-          className={`btn-auth-header ${
-            view ? null : "btn-auth-header-dimmed"
-          }`}
-          onClick={() => {
-            if (!view) {
-              toggleView();
-            }
-          }}
-        >
-          register
-        </CustomButton>
-      </div>
+      <div className="auth-content-cont">
+        <div className="auth-header">
+          <CustomButton
+            className={`btn-auth-header ${
+              view ? "btn-auth-header-dimmed" : null
+            }`}
+            onClick={() => {
+              if (view) {
+                toggleView();
+              }
+            }}
+          >
+            sign in
+          </CustomButton>
+          <CustomButton
+            className={`btn-auth-header ${
+              view ? null : "btn-auth-header-dimmed"
+            }`}
+            onClick={() => {
+              if (!view) {
+                toggleView();
+              }
+            }}
+          >
+            register
+          </CustomButton>
+        </div>
 
-      <div className="auth-inner">{view ? <Register /> : <Login />}</div>
+        <div className="auth-inner">{view ? <Register /> : <Login />}</div>
+      </div>
     </div>
   );
 };

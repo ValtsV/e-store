@@ -56,52 +56,54 @@ class Register extends Component {
     const { displayName, email, password, confirmPassword } = this.state;
 
     return (
-      <div className="register">
-        <form className="signup-form" onSubmit={this.handleSubmit}>
-          <FormInput
-            type="text"
-            name="displayName"
-            value={displayName}
-            onChange={this.handleOnChange}
-            label="name"
-            placeholder=" "
-            required
-          />
-          <FormInput
-            type="email"
-            name="email"
-            value={email}
-            onChange={this.handleOnChange}
-            label="email"
-            placeholder=" "
-            required
-          />
-          <FormInput
-            type="password"
-            name="password"
-            value={password}
-            onChange={this.handleOnChange}
-            label="password"
-            placeholder=" "
-            minLength="8"
-            required
-          />
-          <FormInput
-            type="password"
-            name="confirmPassword"
-            value={confirmPassword}
-            onChange={this.handleOnChange}
-            label="confirm password"
-            placeholder=" "
-            required
-          />
-          <CustomButton className="btn btn-create-acc" type="submit">
-            create account
-          </CustomButton>
-          <div className="register-small-text">
-            By creating an account You agree to our Terms of Service
-          </div>
-        </form>
+      <div className="register-cont">
+        <div className="register">
+          <form className="signup-form" onSubmit={this.handleSubmit}>
+            <FormInput
+              type="text"
+              name="displayName"
+              value={displayName}
+              onChange={this.handleOnChange}
+              label="name"
+              placeholder=" "
+              required
+            />
+            <FormInput
+              type="email"
+              name="email"
+              value={email}
+              onChange={this.handleOnChange}
+              label="email"
+              placeholder=" "
+              required
+            />
+            <FormInput
+              type="password"
+              name="password"
+              value={password}
+              onChange={this.handleOnChange}
+              label="password"
+              placeholder=" "
+              minLength="8"
+              required
+            />
+            <FormInput
+              type="password"
+              name="confirmPassword"
+              value={confirmPassword}
+              onChange={this.handleOnChange}
+              label="confirm password"
+              placeholder=" "
+              required
+            />
+            <CustomButton className="btn btn-create-acc" type="submit">
+              create account
+            </CustomButton>
+            <div className="register-small-text">
+              By creating an account You agree to our Terms of Service
+            </div>
+          </form>
+        </div>
       </div>
     );
   }

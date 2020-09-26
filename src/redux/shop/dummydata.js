@@ -13,7 +13,7 @@ const ShopData = {
         },
         {
           id: 2,
-          name: "Blue Beanie W",
+          name: "Gucci Brown Brim",
           imageUrl: "https://i.ibb.co/cgntB6b/hatwoman2.png",
           price: 70,
         },

@@ -19,7 +19,7 @@ const Directory = ({ sections, shop_data }) => {
   const width = useWindowDimensions() > 767 ? true : false;
 
   return (
-    <div className="bg">
+    <div className="bg directory">
       {width ? (
         <div>
           <div className="directory-menu">
@@ -27,7 +27,7 @@ const Directory = ({ sections, shop_data }) => {
               <MenuItem key={id} {...sectionProps} />
             ))}
           </div>
-          <CollectionPreview title="title" items={items} />
+          <CollectionPreview title="womens" items={items} />
           <CollectionPreview title="mens" items={itemsMen} />
         </div>
       ) : (

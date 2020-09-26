@@ -5,7 +5,7 @@ import "./homepage.styles.scss";
 import Directory from "../components/directory/directory.comp";
 
 const HomePage = () => {
-  return <Directory />;
+  return <Directory classname="directory-cont" />;
 };
 
 export default HomePage;
