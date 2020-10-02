@@ -9,7 +9,15 @@ const CollectionPreview = ({ title, items, path }) => {
   return (
     <div className="collection-preview">
       <span className="coll-title">
-        <Link to={`${path}/${title.toLowerCase()}`}>{title.toLowerCase()}</Link>
+        <Link
+          to={
+            path === "/womens" || path === "/mens"
+              ? `${path}/${title.toLowerCase()}`
+              : `/${title.toLowerCase()}`
+          }
+        >
+          {title.toLowerCase()}
+        </Link>
       </span>
       <div className="coll-item-list">
         {items

@@ -37,7 +37,15 @@ const CollectionPreviewSwiper = ({ title, items, path, length }) => {
   return (
     <div className="rando">
       <span className="coll-title">
-        <Link to={`${path}/${title.toLowerCase()}`}>{title.toLowerCase()}</Link>
+        <Link
+          to={
+            path === "/womens" || path === "/mens"
+              ? `${path}/${title.toLowerCase()}`
+              : `/${title.toLowerCase()}`
+          }
+        >
+          {title.toLowerCase()}
+        </Link>
       </span>
       <Swiper
         className="swiper"

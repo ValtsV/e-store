@@ -2,9 +2,6 @@
 
 .signin {
   font-weight: lighter;
-  // min-height: 78vh;
-  // position: relative;
-  // padding-bottom: 2rem;
 }
 .qwe {
   font-size: 1.5rem;
@@ -50,7 +47,7 @@ input:invalid:not(:placeholder-shown) {
 
 .form-small-text {
   display: flex;
-  justify-content: right;
+  justify-content: flex-end;
   padding: 1rem 0 2rem 0;
 
   right: 0;
